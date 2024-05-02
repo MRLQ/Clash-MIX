@@ -36,10 +36,9 @@ then
     if [ "$?" = 0 ]
     then
        ulimit -SHn 1000000
-       inotifyd ${scripts_dir}/clash.inotify ${moddir} &>> /dev/null &
     fi
 fi
 }
-
+inotifyd ${scripts_dir}/clash.inotify ${moddir} &>> /dev/null &
 start_clash
 start_run
